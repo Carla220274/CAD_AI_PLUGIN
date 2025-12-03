@@ -8,7 +8,7 @@
     <!-- Stop GitHub from compiling every file by default -->
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
 
-    <!-- Required because the palette uses WinForms -->
+    <!-- Required because the palette uses WinForms (local only) -->
     <UseWindowsForms>true</UseWindowsForms>
 
     <!-- REQUIRED for AutoCAD plugin DLL loading -->
@@ -32,13 +32,17 @@
     </Reference>
   </ItemGroup>
 
-  <!-- Code files GitHub should compile -->
+  <!-- GitHub: ONLY compile the safe files -->
   <ItemGroup>
     <Compile Include="PLUGIN.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Class2.cs" />
     <Compile Include="Class3.cs" />
-    <Compile Include="ChatGPTPalette.cs" />
+  </ItemGroup>
+
+  <!-- IMPORTANT: Palette is marked as NONE (GitHub will IGNORE it) -->
+  <ItemGroup>
+    <None Include="ChatGPTPalette.cs" />
   </ItemGroup>
 
 </Project>
