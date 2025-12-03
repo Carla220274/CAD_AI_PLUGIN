@@ -1,22 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
     <OutputType>Library</OutputType>
     <PlatformTarget>x64</PlatformTarget>
 
-    <!-- FIX: Prevent duplicate .cs compilation -->
+    <!-- Prevent GitHub from auto-including all .cs files -->
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
 
     <RootNamespace>CAD_AI_PLUGIN</RootNamespace>
     <AssemblyName>CAD_AI_PLUGIN</AssemblyName>
-
-    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
 
+  <!-- Include ONLY PLUGIN.cs -->
+  <ItemGroup>
+    <Compile Include="PLUGIN.cs" />
+  </ItemGroup>
 
-  <!-- AutoCAD 2025 local references -->
+  <!-- AutoCAD references -->
   <ItemGroup>
     <Reference Include="acmgd">
       <HintPath>AutoCAD_References\acmgd.dll</HintPath>
@@ -32,27 +32,6 @@
       <HintPath>AutoCAD_References\accoremgd.dll</HintPath>
       <Private>false</Private>
     </Reference>
-  </ItemGroup>
-
-
-  <!-- WebView2 -->
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2651.64" />
-  </ItemGroup>
-
-
-  <!-- System -->
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-  </ItemGroup>
-
-
-  <!-- Include PLUGIN.cs explicitly -->
-  <ItemGroup>
-    <Compile Include="PLUGIN.cs" />
   </ItemGroup>
 
 </Project>
