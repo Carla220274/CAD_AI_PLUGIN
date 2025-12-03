@@ -15,15 +15,27 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    # HARD BLOCK .NET 8 — REMOVE ALL INSTALLED SDKs
     - name: Remove ALL .NET SDKs (force .NET Framework only)
+      shell: pwsh
       run: |
-        echo "Removing .NET SDKs..."
-        rmdir /S /Q "C:\Program Files\dotnet" || echo "Nothing to remove"
-        rmdir /S /Q "C:\Program Files (x86)\dotnet" || echo "Nothing to remove"
-        echo "Done."
+        Write-Host "Removing .NET SDKs..."
 
-    # Install ONLY .NET Framework build tools
+        if (Test-Path "C:\Program Files\dotnet") {
+          Remove-Item "C:\Program Files\dotnet" -Recurse -Force
+          Write-Host "Removed C:\Program Files\dotnet"
+        } else {
+          Write-Host "Folder not found: C:\Program Files\dotnet"
+        }
+
+        if (Test-Path "C:\Program Files (x86)\dotnet") {
+          Remove-Item "C:\Program Files (x86)\dotnet" -Recurse -Force
+          Write-Host "Removed C:\Program Files (x86)\dotnet"
+        } else {
+          Write-Host "Folder not found: C:\Program Files (x86)\dotnet"
+        }
+
+        Write-Host "Done."
+
     - name: Install .NET Framework Developer Pack 4.8
       run: choco install netfx-4.8-devpack -y
 
@@ -47,4 +59,6 @@ jobs:
         name: CAD_AI_PLUGIN_build
         path: |
           **/bin/x64/Release/*.dll
+          **/bin/Release/*.dll
+
           **/bin/Release/*.dll
