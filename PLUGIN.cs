@@ -12,10 +12,11 @@ namespace CAD_AI_PLUGIN
             Document doc = Application.DocumentManager.MdiActiveDocument;
             Editor ed = doc.Editor;
 
-            ed.WriteMessage("\nHello Carla 💖 Your AI plugin is alive inside AutoCAD!");
+            ed.WriteMessage("\nHello Carla  Your AI plugin is alive inside AutoCAD!");
         }
     }
 }
+
 
 
 
