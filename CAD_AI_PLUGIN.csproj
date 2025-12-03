@@ -18,25 +18,21 @@
 	</PropertyGroup>
 
 	<!-- AutoCAD 2025 references -->
-	<ItemGroup>
-		<Reference Include="acmgd">
-			<HintPath>C:\Program Files\Autodesk\AutoCAD 2025\acmgd.dll</HintPath>
-			<Private>false</Private>
-		</Reference>
-		<Reference Include="acdbmgd">
-			<HintPath>C:\Program Files\Autodesk\AutoCAD 2025\acdbmgd.dll</HintPath>
-			<Private>false</Private>
-		</Reference>
-		<Reference Include="accoremgd">
-			<HintPath>C:\Program Files\Autodesk\AutoCAD 2025\accoremgd.dll</HintPath>
-			<Private>false</Private>
-		</Reference>
-		<Reference Include="AcWindows">
-			<HintPath>C:\Program Files\Autodesk\AutoCAD 2025\AcWindows.dll</HintPath>
-			<Private>false</Private>
-		</Reference>
+		<ItemGroup>
+   		<Reference Include="acmgd">
+        	<HintPath>AutoCAD_References\acmgd.dll</HintPath>
+        	<Private>false</Private>
+    	</Reference>
+    	<Reference Include="acdbmgd">
+        	<HintPath>AutoCAD_References\acdbmgd.dll</HintPath>
+        	<Private>false</Private>
+   		</Reference>
+    	<Reference Include="accoremgd">
+        	<HintPath>AutoCAD_References\accoremgd.dll</HintPath>
+        	<Private>false</Private>
+   		</Reference>
 	</ItemGroup>
-
+	
 	<!-- WebView2 -->
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2651.64" />
@@ -69,6 +65,7 @@
 	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 
 </Project>
+
 
 
 
