@@ -5,10 +5,15 @@
     <OutputType>Library</OutputType>
     <PlatformTarget>x64</PlatformTarget>
 
-    <!-- STOP GitHub from compiling everything -->
+    <!-- Stop GitHub from compiling every file by default -->
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
 
+    <!-- Required because the palette uses WinForms -->
     <UseWindowsForms>true</UseWindowsForms>
+
+    <!-- REQUIRED for AutoCAD plugin DLL loading -->
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 
     <RootNamespace>CAD_AI_PLUGIN</RootNamespace>
     <AssemblyName>CAD_AI_PLUGIN</AssemblyName>
@@ -27,7 +32,7 @@
     </Reference>
   </ItemGroup>
 
-  <!-- Code files to compile -->
+  <!-- Code files GitHub should compile -->
   <ItemGroup>
     <Compile Include="PLUGIN.cs" />
     <Compile Include="Class1.cs" />
