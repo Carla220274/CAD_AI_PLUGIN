@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11222.15 d18.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAD_AI_PLUGIN", "CAD_AI_PLUGIN.csproj", "{BBA758A8-21C0-4980-B3C7-38118D07A8E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBA758A8-21C0-4980-B3C7-38118D07A8E6}.Debug|x64.ActiveCfg = Debug|x64
+		{BBA758A8-21C0-4980-B3C7-38118D07A8E6}.Debug|x64.Build.0 = Debug|x64
+		{BBA758A8-21C0-4980-B3C7-38118D07A8E6}.Release|x64.ActiveCfg = Release|x64
+		{BBA758A8-21C0-4980-B3C7-38118D07A8E6}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C0E4A2C8-7AF2-4930-AF75-D5E2E4133BA1}
+	EndGlobalSection
+EndGlobal
