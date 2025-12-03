@@ -29,13 +29,13 @@ jobs:
     - name: Restore NuGet packages
       run: nuget restore CAD_AI_PLUGIN.sln
 
-    - name: Build Solution
-      run: msbuild CAD_AI_PLUGIN.sln /p:Configuration=Release /p:Platform="Any CPU"
+    - name: Build Solution (x64)
+      run: msbuild CAD_AI_PLUGIN.sln /p:Configuration=Release /p:Platform="x64"
 
     - name: Upload Built DLL
       uses: actions/upload-artifact@v4
       with:
         name: CAD_AI_PLUGIN_build
         path: |
-          **/bin/Release/*.dll
           **/bin/x64/Release/*.dll
+          **/bin/Release/*.dll
