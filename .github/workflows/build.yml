@@ -1,0 +1,42 @@
+name: Build AutoCAD 2025 Plugin
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.1
+
+    - name: Add .NET Framework Developer Pack 4.8
+      run: |
+        choco install netfx-4.8-devpack -y
+
+    - name: Copy AutoCAD 2025 References
+      run: |
+        mkdir "C:\AutoCAD_References"
+        copy "AutoCAD_References\*.dll" "C:\AutoCAD_References"
+
+    - name: Restore NuGet packages
+      run: nuget restore CAD_AI_PLUGIN.sln
+
+    - name: Build Solution
+      run: msbuild CAD_AI_PLUGIN.sln /p:Configuration=Release /p:Platform="Any CPU" /p:AutoCADRefPath="C:\AutoCAD_References"
+
+    - name: Upload Built DLL
+      uses: actions/upload-artifact@v3
+      with:
+        name: CAD_AI_PLUGIN_build
+        path: |
+          **/bin/Release/*.dll
+          **/bin/x64/Release/*.dll
