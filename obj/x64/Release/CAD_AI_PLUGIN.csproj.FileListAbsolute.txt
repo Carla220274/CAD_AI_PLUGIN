@@ -1,0 +1,13 @@
+C:\CAD_AI_PLUGIN\bin\x64\Release\runtimes\win-x64\native\WebView2Loader.dll
+C:\CAD_AI_PLUGIN\bin\x64\Release\CAD_AI_PLUGIN.dll.config
+C:\CAD_AI_PLUGIN\bin\x64\Release\CAD_AI_PLUGIN.dll
+C:\CAD_AI_PLUGIN\bin\x64\Release\WebView2Loader.dll
+C:\CAD_AI_PLUGIN\bin\x64\Release\Microsoft.Web.WebView2.Core.dll
+C:\CAD_AI_PLUGIN\bin\x64\Release\Microsoft.Web.WebView2.WinForms.dll
+C:\CAD_AI_PLUGIN\bin\x64\Release\Microsoft.Web.WebView2.Wpf.dll
+C:\CAD_AI_PLUGIN\obj\x64\Release\CAD_AI_PLUGIN.csproj.AssemblyReference.cache
+C:\CAD_AI_PLUGIN\obj\x64\Release\CAD_AI_PLUGIN.csproj.SuggestedBindingRedirects.cache
+C:\CAD_AI_PLUGIN\obj\x64\Release\CAD_AI_PLUGIN.dll.config
+C:\CAD_AI_PLUGIN\obj\x64\Release\CAD_AI_PLUGIN.csproj.CoreCompileInputs.cache
+C:\CAD_AI_PLUGIN\obj\x64\Release\CAD_AI_P.7B2FD601.Up2Date
+C:\CAD_AI_PLUGIN\obj\x64\Release\CAD_AI_PLUGIN.dll

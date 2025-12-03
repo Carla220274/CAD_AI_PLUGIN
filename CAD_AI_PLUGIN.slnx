@@ -1,0 +1,10 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="CAD_AI_PLUGIN/CAD_AI_PLUGIN.csproj" Id="bba758a8-21c0-4980-b3c7-38118d07a8e6">
+    <Platform Solution="*|ARM64" Project="ARM64" />
+  </Project>
+</Solution>
