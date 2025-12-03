@@ -1,70 +1,75 @@
-﻿<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-	<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
 
-	<PropertyGroup>
-		<Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
-		<Platform Condition="'$(Platform)' == ''">x64</Platform>
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
+    <Platform Condition="'$(Platform)' == ''">x64</Platform>
 
-		<OutputType>Library</OutputType>
-		<TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-		<FileAlignment>512</FileAlignment>
+    <OutputType>Library</OutputType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
 
-		<RootNamespace>CAD_AI_PLUGIN</RootNamespace>
-		<AssemblyName>CAD_AI_PLUGIN</AssemblyName>
+    <RootNamespace>CAD_AI_PLUGIN</RootNamespace>
+    <AssemblyName>CAD_AI_PLUGIN</AssemblyName>
 
-		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
-	</PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+  </PropertyGroup>
 
-	<!-- AutoCAD 2025 references -->
-		<ItemGroup>
-   		<Reference Include="acmgd">
-        	<HintPath>AutoCAD_References\acmgd.dll</HintPath>
-        	<Private>false</Private>
-    	</Reference>
-    	<Reference Include="acdbmgd">
-        	<HintPath>AutoCAD_References\acdbmgd.dll</HintPath>
-        	<Private>false</Private>
-   		</Reference>
-    	<Reference Include="accoremgd">
-        	<HintPath>AutoCAD_References\accoremgd.dll</HintPath>
-        	<Private>false</Private>
-   		</Reference>
-	</ItemGroup>
-	
-	<!-- WebView2 -->
-	<ItemGroup>
-		<PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2651.64" />
-	</ItemGroup>
+  <!-- AutoCAD 2025 references -->
+  <ItemGroup>
+    <Reference Include="acmgd">
+      <HintPath>AutoCAD_References\acmgd.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="acdbmgd">
+      <HintPath>AutoCAD_References\acdbmgd.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="accoremgd">
+      <HintPath>AutoCAD_References\accoremgd.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
 
-	<!-- System -->
-	<ItemGroup>
-		<Reference Include="System" />
-		<Reference Include="System.Core" />
-		<Reference Include="System.Drawing" />
-		<Reference Include="System.Windows.Forms" />
-	</ItemGroup>
+  <!-- WebView2 (safe) -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2651.64" />
+  </ItemGroup>
 
-	<!-- Build folders -->
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-		<OutputPath>bin\x64\Debug\</OutputPath>
-		<PlatformTarget>x64</PlatformTarget>
-	</PropertyGroup>
+  <!-- System references -->
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
 
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-		<OutputPath>bin\x64\Release\</OutputPath>
-		<PlatformTarget>x64</PlatformTarget>
-	</PropertyGroup>
+  <!-- Output folders -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
 
-	<!-- Include plugin file in build -->
-	<ItemGroup>
-    	<Compile Include="PLUGIN.cs" />
-	</ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
 
-	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- Include your plugin code file(s) -->
+  <ItemGroup>
+    <Compile Include="PLUGIN.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Class2.cs" />
+    <Compile Include="Class3.cs" />
+    <Compile Include="ChatGPTPalette.cs" />
+  </ItemGroup>
+
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 
 </Project>
+
 
 
 
