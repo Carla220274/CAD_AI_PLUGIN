@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1.1
@@ -31,10 +31,10 @@ jobs:
       run: nuget restore CAD_AI_PLUGIN.sln
 
     - name: Build Solution
-      run: msbuild CAD_AI_PLUGIN.sln /p:Configuration=Release /p:Platform="Any CPU" /p:AutoCADRefPath="C:\AutoCAD_References"
+      run: msbuild CAD_AI_PLUGIN.sln /p:Configuration=Release /p:Platform="Any CPU"
 
     - name: Upload Built DLL
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: CAD_AI_PLUGIN_build
         path: |
