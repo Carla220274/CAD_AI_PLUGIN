@@ -5,50 +5,36 @@
     <OutputType>Library</OutputType>
     <PlatformTarget>x64</PlatformTarget>
 
-    <!-- Prevent GitHub from auto-compiling UI files -->
+    <!-- STOP GitHub from compiling everything -->
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+
+    <UseWindowsForms>true</UseWindowsForms>
 
     <RootNamespace>CAD_AI_PLUGIN</RootNamespace>
     <AssemblyName>CAD_AI_PLUGIN</AssemblyName>
-
-    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
 
-  <!-- AutoCAD 2025 DLL REFERENCES -->
+  <!-- AutoCAD 2025 References -->
   <ItemGroup>
     <Reference Include="acmgd">
       <HintPath>AutoCAD_References\acmgd.dll</HintPath>
-      <Private>false</Private>
     </Reference>
-
     <Reference Include="acdbmgd">
       <HintPath>AutoCAD_References\acdbmgd.dll</HintPath>
-      <Private>false</Private>
     </Reference>
-
     <Reference Include="accoremgd">
       <HintPath>AutoCAD_References\accoremgd.dll</HintPath>
-      <Private>false</Private>
     </Reference>
   </ItemGroup>
 
-  <!-- ONLY compile these basic files on GitHub -->
+  <!-- Code files to compile -->
   <ItemGroup>
     <Compile Include="PLUGIN.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Class2.cs" />
     <Compile Include="Class3.cs" />
-  </ItemGroup>
-
-  <!-- DO NOT COMPILE the palette (UI code). GitHub cannot build WebView2. -->
-  <ItemGroup>
-    <None Include="ChatGPTPalette.cs" />
+    <Compile Include="ChatGPTPalette.cs" />
   </ItemGroup>
 
 </Project>
-
-
-
-
 
