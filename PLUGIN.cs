@@ -1,6 +1,6 @@
+using Autodesk.AutoCAD.ApplicationServices;
 using Autodesk.AutoCAD.Runtime;
 using Autodesk.AutoCAD.EditorInput;
-using Autodesk.AutoCAD.ApplicationServices.Core;
 
 namespace CAD_AI_PLUGIN
 {
@@ -9,13 +9,15 @@ namespace CAD_AI_PLUGIN
         [CommandMethod("HELLOAI")]
         public static void HelloAI()
         {
-            var doc = Application.DocumentManager.MdiActiveDocument;
-            var ed = doc.Editor;
+            Document doc = Application.DocumentManager.MdiActiveDocument;
+            Editor ed = doc.Editor;
 
             ed.WriteMessage("\n🧚‍♀️ Hello Carla, your AI plugin is ALIVE in AutoCAD!");
         }
     }
 }
+
+
 
 
 
