@@ -48,4 +48,3 @@ jobs:
         path: |
           **/bin/x64/Release/*.dll
           **/bin/Release/*.dll
-
