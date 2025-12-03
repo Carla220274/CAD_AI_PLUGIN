@@ -15,10 +15,8 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Setup .NET 8
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '8.x'
+    # REMOVE .NET 8 — it breaks .NET Framework builds
+    # ❌ DO NOT add setup-dotnet here
 
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1.1
